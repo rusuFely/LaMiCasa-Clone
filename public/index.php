@@ -32,23 +32,40 @@ if ($uri === '/users/logout' && $method === 'POST') {
     exit;
 }
 
+// GET - toate produsele
 if ($uri === '/products' && $method === 'GET') {
-
-    // Cream Modelul si ii transmitem conexiunea PDO.
-    $productModel = new Product($pdo);
-
-    // Cream Service-ul si ii transmitem Modelul.
-    $productService = new ProductService($productModel);
-
-    // Cream Controller-ul si ii transmitem Service-ul.
-    $productController = new ProductController($productService);
-
-    // Apelam metoda care returneaza produsele in JSON.
-    $productController->index();
-
+    ProductController::index($pdo);
     exit;
 }
 
+// POST - creare produs
+if ($uri === '/products' && $method === 'POST') {
+    ProductController::store($pdo);
+    exit;
+}
+
+// Rute pentru un produs dupa ID
+if (preg_match('#^/products/([0-9]+)$#', $uri, $matches)) {
+    $productId = (int) $matches[1];
+
+    // GET - detalii produs
+    if ($method === 'GET') {
+        ProductController::show($pdo, $productId);
+        exit;
+    }
+
+    // PUT sau POST - actualizare produs
+    if ($method === 'PUT' || $method === 'POST') {
+        ProductController::update($pdo, $productId);
+        exit;
+    }
+
+    // DELETE - stergere produs
+    if ($method === 'DELETE') {
+        ProductController::destroy($pdo, $productId);
+        exit;
+    }
+}
 
 http_response_code(404);
 header('Content-Type: application/json');

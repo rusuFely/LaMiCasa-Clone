@@ -42,8 +42,16 @@ class UserController {
             $userModel = new User($pdo);
             $userService = new UserService($userModel);
 
+            // $user = $userService->login($email, $password);
+
+            // $_SESSION["user_id"] = $user["id"];
+
             $user = $userService->login($email, $password);
 
+            // Generam un ID nou pentru sesiune dupa autentificare.
+            session_regenerate_id(true);
+
+            // Salvam ID-ul utilizatorului autentificat in sesiune.
             $_SESSION["user_id"] = $user["id"];
 
             self::jsonResponse([

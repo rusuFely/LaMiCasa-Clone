@@ -98,4 +98,31 @@ class Product {
 
         return $stmt->execute([$id]);
     }
+
+    // Asociaza un produs cu o categorie.
+    public function addCategory(int $productId, int $categoryId): void {
+        $stmt = $this->db->prepare("
+            INSERT INTO product_categories (product_id, category_id)
+            VALUES (?, ?)
+        ");
+
+        $stmt->execute([$productId, $categoryId]);
+    }
+
+    // Incepem tranzactia.
+    public function beginTransaction(): void {
+        $this->db->beginTransaction();
+    }
+
+    // Confirmam modificarile.
+    public function commit(): void {
+        $this->db->commit();
+    }
+
+    // Anulam modificarile daca apare o eroare.
+    public function rollback(): void {
+        if ($this->db->inTransaction()) {
+            $this->db->rollBack();
+        }
+    }
 }

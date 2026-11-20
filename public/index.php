@@ -5,6 +5,7 @@ session_start();
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../app/Controllers/UserController.php';
 require_once __DIR__ . '/../app/Controllers/ProductController.php';
+require_once __DIR__ . '/../app/Controllers/CategoryController.php';
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = preg_replace('#^/index\.php#', '', $uri);
@@ -65,6 +66,33 @@ if (preg_match('#^/products/([0-9]+)$#', $uri, $matches)) {
         ProductController::destroy($pdo, $productId);
         exit;
     }
+}
+
+// GET - toate categoriile
+if ($uri === '/categories' && $method === 'GET') {
+    CategoryController::index($pdo);
+    exit;
+}
+
+// Rute pentru o categorie dupa ID
+if (preg_match('#^/categories/([0-9]+)$#', $uri, $matches)) {
+    $categoryId = (int) $matches[1];
+
+    // GET - o categorie
+    if ($method === 'GET') {
+        CategoryController::show($pdo, $categoryId);
+        exit;
+    }
+}
+
+// GET - subcategoriile unei categorii
+if (preg_match('#^/categories/([0-9]+)/children$#', $uri, $matches)
+    && $method === 'GET') {
+
+    $categoryId = (int) $matches[1];
+
+    CategoryController::children($pdo, $categoryId);
+    exit;
 }
 
 http_response_code(404);

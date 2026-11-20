@@ -79,27 +79,29 @@ class ProductService {
             'barcode' => $data['barcode'] ?? null
         ];
     }
-
-    // Creeaza un produs.
-    public function create(array $data): int {
+    // Creeaza un produs nou.
+    public function create(array $data): int { // declarăm o metodă care primește datele produsului și returnează ID-ul noului produs.
+        // verificăm dacă produsul are nume, preț valid etc.
         $data = $this->validateProduct($data);
-
+        // trimitem datele către Model, care execută comanda SQL INSERT.
         return $this->productModel->create($data);
     }
 
-    // Actualizeaza un produs.
-    public function update(int $id, array $data): bool {
+    // Modifica un produs existent.
+    public function update(int $id, array $data): void {
+        // Verificam daca produsul exista.
         $this->getById($id);
-
+        // Verificam datele noi.
         $data = $this->validateProduct($data);
-
-        return $this->productModel->update($id, $data);
+        // Actualizam produsul in baza de date.
+        $this->productModel->update($id, $data);
     }
 
-    // Sterge un produs.
-    public function delete(int $id): bool {
+    // Sterge un produs dupa ID.
+    public function delete(int $id): void {
+        // Verificam daca produsul exista.
         $this->getById($id);
-
-        return $this->productModel->delete($id);
+        // Stergem produsul din baza de date.
+        $this->productModel->delete($id);
     }
 }

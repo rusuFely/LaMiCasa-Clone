@@ -126,4 +126,5 @@ class CategoryController {
         echo json_encode($data);
         exit;
     }
+
 }

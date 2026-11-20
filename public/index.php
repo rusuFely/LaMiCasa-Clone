@@ -95,6 +95,23 @@ if (preg_match('#^/categories/([0-9]+)/children$#', $uri, $matches)
     exit;
 }
 
+// GET - produsele unei categorii.
+// Ce face?
+// Când Postman trimite:
+
+// GET /categories/24/products
+// - 24 este ID-ul categoriei.
+// - CategoryController::products() caută produsele categoriei.
+// - exit oprește executarea după trimiterea răspunsului.
+if (preg_match('#^/categories/([0-9]+)/products$#', $uri, $matches)
+    && $method === 'GET') {
+
+    $categoryId = (int) $matches[1];
+
+    CategoryController::products($pdo, $categoryId);
+    exit;
+}
+
 http_response_code(404);
 header('Content-Type: application/json');
 

@@ -7,31 +7,65 @@
 
     <!-- Bara superioară -->
     <div class="hidden border-b border-gray-200 bg-gray-50 lg:block">
-        <div class="mx-auto flex max-w-[1300px] items-center justify-between gap-4 px-6 py-3 text-xs">
+        <div class="mx-auto flex max-w-[1100px] items-center justify-between gap-3 px-4 text-[11px]" style="max-width:1100px; height:40px; padding:0 16px; gap:12px; font-size:11px">
 
             <!-- Livrare -->
-            <div>
+            <div class="shrink-0 whitespace-nowrap">
                 Pentru comenzile mai mari de 399 lei
-                <span class="ml-2 rounded border border-orange-500 px-2 py-1 font-semibold text-orange-500">
+                <span class="ml-2 rounded border border-orange-500 px-1 py-0.5 font-semibold text-orange-500">
                     LIVRAREA GRATUITĂ
                 </span>
             </div>
 
             <!-- Linkuri -->
-            <nav class="flex gap-5 font-condensed">
-                <a href="#" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+            <nav class="desktop-top-nav flex items-center whitespace-nowrap font-condensed">
+                <a href="#" style="padding:0 12px" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
                     DESPRE NOI
                 </a>
-                <a href="#" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+                <a href="#" style="padding:0 12px; border-left:1px solid #d4d4d4" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
                     LIVRARE ȘI ACHITARE
                 </a>
-                <a href="#" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+                <a href="#" style="padding:0 12px; border-left:1px solid #d4d4d4" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
                     BRANDURI
                 </a>
-                <a href="#" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+                <a href="#" style="padding:0 12px; border-left:1px solid #d4d4d4" class="transition-colors hover:text-orange-500 focus-visible:text-orange-500">
                     CONTACTE
                 </a>
             </nav>
+
+            <!-- Rețele sociale -->
+            <div class="flex items-center gap-3 text-sm text-[#666]">
+
+                    <a href="#" aria-label="Facebook"
+                        class="transition-colors hover:text-orange-500">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram"
+                        class="transition-colors hover:text-orange-500">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="WhatsApp"
+                        class="transition-colors hover:text-orange-500">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok"
+                        class="transition-colors hover:text-orange-500">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Telegram"
+                        class="transition-colors hover:text-orange-500">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Viber"
+                        class="transition-colors hover:text-orange-500">
+                        <i class="fa-brands fa-viber"></i>
+                    </a>
+                </div>
 
             <!-- Limbi -->
             <div class="flex items-center gap-3 text-xs">
@@ -47,16 +81,16 @@
     </div>
 
     <!-- Rândul principal desktop -->
-    <div class="mx-auto hidden max-w-[1300px] items-center gap-5 px-6 py-4 lg:flex">
+    <div class="mx-auto hidden max-w-[1100px] items-center gap-[18px] px-4 py-1 lg:flex" style="max-width:1100px; gap:18px; padding:4px 16px">
 
         <!-- Logo -->
         <a href="/pages/index.php"
-            class="shrink-0"
+            class="desktop-logo shrink-0" style="width:136px; margin-right:47px"
             aria-label="LaMiCasa - Pagina principală">
 
             <img src="/assets/logo.svg"
                 alt="LaMiCasa"
-                class="block h-auto w-[150px]">
+                class="block h-auto w-[136px]" width="136" style="width:136px; max-width:100%; height:auto">
         </a>
 
         <!-- ===================================== -->
@@ -64,7 +98,7 @@
         <!-- ===================================== -->
 
         <div id="desktop-catalog-wrap"
-            class="relative ml-3 w-[270px] shrink-0">
+            class="relative w-[243px] shrink-0" style="width:243px">
 
             <!-- Buton Catalog -->
             <button
@@ -72,7 +106,7 @@
                 id="desktop-catalog-btn"
                 aria-controls="desktop-catalog"
                 aria-expanded="false"
-                class="flex w-full items-center justify-between rounded-2xl bg-[#f76b1c] px-4 py-4 font-condensed font-semibold text-white transition-colors duration-150 hover:bg-[#e85e10] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 active:bg-[#d9540d]">
+                class="flex w-full items-center justify-between rounded-xl bg-[#f76b1c] px-3.5 font-condensed text-sm font-medium text-white transition-colors duration-150 hover:bg-[#e85e10] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 active:bg-[#d9540d]" style="height:45px; padding:0 14px; font-size:14px; border-radius:12px">
 
                 <span>
                     <i class="fa-solid fa-bars mr-2"></i>
@@ -84,7 +118,7 @@
 
             <!-- Meniu Catalog -->
             <div id="desktop-catalog"
-                class="absolute left-0 top-full z-50 hidden w-[270px] rounded-b-2xl bg-white font-condensed text-sm shadow-xl">
+                class="absolute left-0 top-full z-50 hidden w-full rounded-b-2xl bg-white font-condensed text-sm shadow-xl">
 
                 <!-- NIVELUL 1: Categorii principale -->
                 <nav id="desktop-categories"
@@ -133,7 +167,7 @@
                 <!-- NIVELUL 3: Sub-subcategorii -->
                 <nav id="desktop-third-level"
                     aria-label="Sub-subcategorii"
-                    class="absolute left-[490px] top-0 hidden w-[220px] rounded-2xl bg-white py-2 text-gray-500 shadow-xl">
+                    class="absolute left-[463px] top-0 hidden w-[220px] rounded-2xl bg-white py-2 text-gray-500 shadow-xl" style="left:calc(100% + 220px)">
                 </nav>
 
             </div>
@@ -144,18 +178,18 @@
         <!-- ===================================== -->
 
         <form role="search"
-            class="flex min-w-0 flex-1 items-center rounded-2xl border-2 border-orange-400 focus-within:border-orange-600">
+            class="flex min-w-0 flex-1 items-center rounded-xl border border-orange-400 focus-within:border-orange-600" style="height:42px; border-width:1px; border-radius:12px">
 
             <input
                 type="search"
                 name="q"
                 placeholder="Caută produse"
                 aria-label="Caută produse"
-                class="w-full min-w-0 rounded-2xl px-4 py-3 outline-none">
+                class="h-full w-full min-w-0 rounded-xl px-3 text-sm outline-none">
 
             <button type="submit"
                 aria-label="Caută"
-                class="px-4 text-xl transition-colors hover:text-orange-500 focus-visible:text-orange-500 active:text-orange-600">
+                class="px-3 text-lg transition-colors hover:text-orange-500 focus-visible:text-orange-500 active:text-orange-600">
 
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -167,16 +201,16 @@
     <!-- Cont utilizator -->
     <a href="#"
         aria-label="Contul meu"
-        class="text-xl transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+        class="text-lg transition-colors hover:text-orange-500 focus-visible:text-orange-500">
         <i class="fa-regular fa-user"></i>
     </a>
 
     <!-- Compară -->
     <a href="#"
         aria-label="Compară"
-        class="relative text-xl transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+        class="relative text-lg transition-colors hover:text-orange-500 focus-visible:text-orange-500">
 
-        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        <i class="fa-solid fa-shuffle"></i>
 
         <span id="compare-count"
             class="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#80b82a] px-1 text-[10px] font-bold text-white">
@@ -187,7 +221,7 @@
     <!-- Favorite -->
     <a href="#"
         aria-label="Favorite"
-        class="relative text-xl transition-colors hover:text-orange-500 focus-visible:text-orange-500">
+        class="relative text-lg transition-colors hover:text-orange-500 focus-visible:text-orange-500">
 
         <i class="fa-regular fa-heart"></i>
 
@@ -202,7 +236,7 @@
         aria-label="Coșul meu"
         class="flex items-center gap-2 transition-colors hover:text-orange-500 focus-visible:text-orange-500">
 
-        <span class="relative text-xl">
+        <span class="relative text-lg">
             <i class="fa-solid fa-bag-shopping"></i>
 
             <span id="cart-count"

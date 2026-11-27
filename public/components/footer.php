@@ -108,3 +108,5 @@
     </div>
 </footer>
 <!-- npx.cmd @tailwindcss/cli -i ./public/css/styles.css -o ./public/css/output.css --watch -->
+
+<!-- http://localhost:8080/pages/index.php -->

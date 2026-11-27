@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@source "../components";
+@source "../pages";
+@source "../js";
+
 @theme {
     --font-sans: "Roboto", Arial, Helvetica, sans-serif;
     --font-condensed: "Roboto Condensed", Arial, Helvetica, sans-serif;
